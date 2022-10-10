@@ -36,7 +36,7 @@ module.exports.Login = async (req, res) => {
                 switch (result) {
                     case true:
                         const token = jwt.sign({email: admin.email}, process.env.SECRET)
-                        res.status(200).json({ message: 'success', status: 200, token, role: admin?.account_type, meta: {} })
+                        res.status(200).json({ message: 'success', status: 200, token, role: admin?.account_type, user: admin, meta: {} })
                         break
                     default:
                         res.status(403).json({ message: 'error', status: 403, meta: { response: 'email or password is incorrect' } })

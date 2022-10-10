@@ -331,7 +331,6 @@ module.exports.setStats = catchAsync(async (req, res, next) => {
             //     console.log('Error', error.message)
             //     return res.status(401).json({status: "error", message: "invalid request", meta: { error: error.message}})
             // }
-
             console.log(data)
             const user = await User.findOne({ username: data.user });
 

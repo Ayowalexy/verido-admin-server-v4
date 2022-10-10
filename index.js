@@ -17,7 +17,7 @@ const DATABASE = process.env.DATABASE
 const DB = `mongodb+srv://seinde4:${PASSWORD}@cluster0.pp8yv.mongodb.net/${DATABASE}?retryWrites=true&w=majority`;
 const STAGING = 'mongodb://localhost:27017/verido-server';
 
-mongoose.connect(DB,
+mongoose.connect(STAGING,
     {    
     useNewUrlParser: true,
     useUnifiedTopology: true,

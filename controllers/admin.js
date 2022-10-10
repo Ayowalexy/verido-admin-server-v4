@@ -625,7 +625,7 @@ module.exports.GetOneConsultant = async (req, res) => {
 module.exports.addBusiness = async (req, res, next) => {
     try {
         jwt.verify(req.token, process.env.SECRET, async (err, data) => {
-            if (!err) {
+            if (err) {
                 res.status(403).json({ message: 'error', status: 403, meta: { response: 'Token is invalid or expired' } })
                 return
             }
